@@ -1,4 +1,6 @@
-# gerbig-vue
+# gerbig-org
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7ee0cd1e-1f09-42cb-b4e3-09bc66f99f68/deploy-status)](https://app.netlify.com/sites/flamboyant-davinci-bafb44/deploys)
 
 ## Build Setup
 
