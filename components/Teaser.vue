@@ -1,0 +1,78 @@
+<template>
+  <div v-editable="blok" class="teaser" v-bind:class="classes">
+    <img :src="blok.image.filename" class="teaser__image" />
+    <h3 class="teaser__headline">
+      <span>{{ blok.headline }}</span>
+    </h3>
+    <p class="teaser__text">{{ blok.description }}</p>
+  </div>
+</template>
+
+<script>
+export default {
+  props: {
+    blok: {
+      type: Object,
+      required: true,
+    },
+  },
+  computed: {
+    classes: function () {
+      console.log(this.blok.imagePosition)
+      return {
+        "teaser--image-left": this.blok.imagePosition === "left",
+        "teaser--image-right": this.blok.imagePosition === "right",
+      };
+    },
+  },
+};
+</script>
+
+<style scoped>
+.teaser {
+  display: grid;
+  grid-template-columns: repeat(8, 120px);
+  grid-template-rows: repeat(5, 120px);
+  margin: 120px auto;
+}
+.teaser__image {
+  grid-area: 1 / 1 / span 3 / span 5;
+  z-index: 1;
+  position: relative;
+}
+.teaser__headline {
+  grid-area: 1 / 5 / span 3 / span 4;
+  font-size: 49px;
+  line-height: 56px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  z-index: 2;
+  position: relative;
+}
+.teaser__headline span {
+  display: inline;
+  -webkit-box-decoration-break: clone;
+  -ms-box-decoration-break: clone;
+  -o-box-decoration-break: clone;
+  box-decoration-break: clone;
+  display: inline;
+  background: white;
+  box-shadow: 10px 0 0 white, -10px 0 0 white;
+  white-space: pre-line;
+}
+.teaser__text {
+  grid-area: 4 / 4 / span 2 / span 4;
+  padding-top: 20px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 20px;
+  line-height: 32px;
+}
+
+.teaser--image-right .teaser__image {
+  grid-area: 1 / 3 / span 3 / span 5;
+}
+.teaser--image-right .teaser__headline {
+  grid-area: 1 / 2 / span 3 / span 4;
+}
+</style>
