@@ -1,9 +1,12 @@
 <template>
   <div v-editable="blok" class="teaser" v-bind:class="classes">
     <img :src="blok.image.filename" class="teaser__image" />
-    <h3 class="teaser__headline">
-      <span>{{ blok.headline }}</span>
-    </h3>
+    <div class="teaser__headline-container">
+      <h3 class="teaser__headline">
+        <span>{{ blok.headline }}</span>
+      </h3>
+
+    </div>
     <p class="teaser__text">{{ blok.description }}</p>
   </div>
 </template>
@@ -39,15 +42,20 @@ export default {
   z-index: 1;
   position: relative;
 }
-.teaser__headline {
+.teaser__headline-container {
   grid-area: 1 / 5 / span 3 / span 4;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  z-index: 2;
+  position: relative;
+
+}
+.teaser__headline {
   font-size: 49px;
   line-height: 56px;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  z-index: 2;
-  position: relative;
+  white-space: pre-wrap;
 }
 .teaser__headline span {
   display: inline;
@@ -71,7 +79,7 @@ export default {
 .teaser--image-right .teaser__image {
   grid-area: 1 / 3 / span 3 / span 5;
 }
-.teaser--image-right .teaser__headline {
+.teaser--image-right .teaser__headline-container {
   grid-area: 1 / 2 / span 3 / span 4;
 }
 </style>
