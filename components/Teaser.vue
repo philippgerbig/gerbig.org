@@ -18,7 +18,6 @@ export default {
   },
   computed: {
     classes: function () {
-      console.log(this.blok.imagePosition)
       return {
         "teaser--image-left": this.blok.imagePosition === "left",
         "teaser--image-right": this.blok.imagePosition === "right",

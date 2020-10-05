@@ -12,7 +12,6 @@ export default {
   },
   computed: {
     currentPage() {
-      console.log("route", this.$route);
       return this.$route.path.length >= 0 ? this.$route.path.substr(1) : "";
     },
   },

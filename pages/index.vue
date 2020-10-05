@@ -35,9 +35,9 @@ export default {
         }
       }
     );
-    this.$storybridge.resolveRelations(["header"], (data) => {
-      console.log("data", data);
-    });
+    // this.$storybridge.resolveRelations(["header"], (data) => {
+    //   console.log("data", data);
+    // });
     // Use the bridge to listen the events
     this.$storybridge.on(["published", "change"], (event) => {
       // window.location.reload()
@@ -76,7 +76,6 @@ export default {
     return Promise.all(requests)
       .then((responses) => {
         const story = responses[0].data.story;
-        console.log("story", story);
         return {
           story,
         };
