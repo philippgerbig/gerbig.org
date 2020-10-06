@@ -62,9 +62,11 @@ export default {
     // // This what would we do in real project
     // const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
     // const fullSlug = (context.route.path == '/' || context.route.path == '') ? 'home' : context.route.path
+
     const options = {
       version: "draft",
       resolve_relations: "header,footer",
+      resolve_links: 'url'
     };
 
     // Load the JSON from the API - loadig the home content (index page)
