@@ -26,7 +26,7 @@
     <nav v-if="blok.content.footer_links" class="footer__links">
       <ul>
         <li v-for="link in blok.content.footer_links" v-bind:key="link.id">
-          <nuxt-link :to="link.url"> {{ link.text }} </nuxt-link>
+          <nuxt-link :to="link.target.story ? link.target.story.url : link.target.cached_url" v-if="link.target.linktype === 'story'"> {{ link.text }} </nuxt-link>
         </li>
       </ul>
     </nav>
@@ -61,6 +61,7 @@ export default {
 .footer__social-links ul,
 .footer__links ul {
   display: flex;
+  justify-content: flex-end;
 }
 .footer__links a {
   text-transform: uppercase;

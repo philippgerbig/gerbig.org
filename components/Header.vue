@@ -9,7 +9,10 @@
     <nav v-if="blok.content.header_links">
       <ul>
         <li v-for="link in blok.content.header_links" v-bind:key="link.id">
-          <nuxt-link :to="link.url"> {{link.text}} </nuxt-link>
+          <nuxt-link :to="link.target.story ? link.target.story.full_slug : link.target.cached_url" v-if="link.target && link.target.linktype === 'story'">
+            {{ link.text }}
+          </nuxt-link>
+          <a :href="link.target.url" v-if="link.target && link.target.linktype === 'url'">{{link.text}}</a>
         </li>
       </ul>
     </nav>
