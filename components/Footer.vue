@@ -16,7 +16,7 @@
       <ul>
         <li v-for="link in blok.content.social_links" v-bind:key="link.id">
           <a :href="link.url.url" target="_blank" :title="link.title">
-            <img :src="link.icon.filename" :alt="link.icon.alt" />
+            <img :src="link.icon.filename" :alt="link.title" />
           </a>
         </li>
       </ul>
