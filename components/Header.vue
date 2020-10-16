@@ -1,7 +1,7 @@
 <template>
   <header class="header" v-editable="blok" v-if="blok">
     <!-- Logo -->
-    <nuxt-link to="/" v-if="blok.content.logo">
+    <nuxt-link to="/" v-if="blok.content.logo"  title="Startseite">
       <img :src="blok.content.logo.filename" :alt="blok.content.logo.alt" />
     </nuxt-link>
 

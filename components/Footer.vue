@@ -2,7 +2,7 @@
   <footer class="footer">
     <!-- Logo Icon -->
     <div class="footer__logo">
-      <nuxt-link to="/">
+      <nuxt-link to="/" title="Startseite">
         <img
           :src="blok.content.icon.filename"
           :alt="blok.content.icon.alt"
@@ -15,7 +15,7 @@
     <div v-if="blok.content.social_links" class="footer__social-links">
       <ul>
         <li v-for="link in blok.content.social_links" v-bind:key="link.id">
-          <a :href="link.url.url" target="_blank">
+          <a :href="link.url.url" target="_blank" :title="link.title">
             <img :src="link.icon.filename" :alt="link.icon.alt" />
           </a>
         </li>
