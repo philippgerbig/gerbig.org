@@ -66,7 +66,6 @@ export default {
 .footer__links a {
   text-transform: uppercase;
   margin-left: 20px;
-  color: #888;
   font-size: 12px;
   font-weight: bold;
 }
