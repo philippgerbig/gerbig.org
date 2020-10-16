@@ -17,6 +17,11 @@ export default {
       story: { content: {} },
     };
   },
+  head() {
+    return {
+      htmlAttrs: { lang: "de" },
+    };
+  },
   mounted() {
     // Use the input event for instant update of content
     this.$storybridge.on("input", (event) => {

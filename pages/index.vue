@@ -1,10 +1,10 @@
 <template>
-    <component
-      v-if="story.content.component"
-      :key="story.content._uid"
-      :blok="story.content"
-      :is="story.content.component"
-    />
+  <component
+    v-if="story.content.component"
+    :key="story.content._uid"
+    :blok="story.content"
+    :is="story.content.component"
+  />
 </template>
 
 <script>
@@ -12,6 +12,11 @@ import Header from "../components/Header";
 import PageContent from "../components/PageContent";
 export default {
   components: { PageContent },
+  head() {
+    return {
+      htmlAttrs: { lang: "de" },
+    };
+  },
   data() {
     return {
       story: { content: {} },
@@ -19,16 +24,13 @@ export default {
   },
   mounted() {
     // Use the input event for instant update of content
-    this.$storybridge.on(
-      "input",
-      (event) => {
-        if (event.story.id === this.story.id) {
-          // event.story.content.header = this.story.content.header
-          // event.story.content.footer = this.story.content.footer
-          this.story = event.story
-        }
+    this.$storybridge.on("input", (event) => {
+      if (event.story.id === this.story.id) {
+        // event.story.content.header = this.story.content.header
+        // event.story.content.footer = this.story.content.footer
+        this.story = event.story;
       }
-    );
+    });
     // this.$storybridge.resolveRelations(["header"], (data) => {
     //   console.log("data", data);
     // });
@@ -60,7 +62,7 @@ export default {
     const options = {
       version: "draft",
       resolve_relations: "header,footer",
-      resolve_links: 'url'
+      resolve_links: "url",
     };
 
     // Load the JSON from the API - loadig the home content (index page)
