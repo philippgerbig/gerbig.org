@@ -1,16 +1,10 @@
 <template>
-  <div class="page">
-    <Header :blok="story.content.header" />
-
     <component
       v-if="story.content.component"
       :key="story.content._uid"
       :blok="story.content"
       :is="story.content.component"
     />
-
-    <Footer :blok="story.content.footer" />
-  </div>
 </template>
 
 <script>
@@ -29,8 +23,8 @@ export default {
       "input",
       (event) => {
         if (event.story.id === this.story.id) {
-          event.story.content.header = this.story.content.header
-          event.story.content.footer = this.story.content.footer
+          // event.story.content.header = this.story.content.header
+          // event.story.content.footer = this.story.content.footer
           this.story = event.story
         }
       }
@@ -88,9 +82,3 @@ export default {
   },
 };
 </script>
-<style scoped>
-.content {
-  display: flex;
-  flex-direction: column;
-}
-</style>
