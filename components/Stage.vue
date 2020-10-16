@@ -6,7 +6,7 @@
     :class="{ 'stage--auto': blok.size === 'auto' }"
   >
     <div class="stage__image" v-if="blok.image && blok.image.filename !== ''">
-      <img :src="blok.image ? blok.image.filename : ''" />
+      <img :src="blok.image ? blok.image.filename : ''" :alt="blok.image.alt" />
     </div>
     <div
       class="stage__text"
