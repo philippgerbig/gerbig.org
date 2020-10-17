@@ -15,7 +15,7 @@
     <div v-if="blok.content.social_links" class="footer__social-links">
       <ul>
         <li v-for="link in blok.content.social_links" v-bind:key="link.id">
-          <a :href="link.url.url" target="_blank" :title="link.title">
+          <a :href="link.url.url" target="_blank" :title="link.title" rel="noreferrer">
             <img :src="link.icon.filename" :alt="link.title" />
           </a>
         </li>
