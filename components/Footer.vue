@@ -7,6 +7,8 @@
           :src="blok.content.icon.filename"
           :alt="blok.content.icon.alt"
           v-if="blok.content.icon"
+          width="36"
+          height="40"
         />
       </nuxt-link>
     </div>
@@ -16,7 +18,7 @@
       <ul>
         <li v-for="link in blok.content.social_links" v-bind:key="link.id">
           <a :href="link.url.url" target="_blank" :title="link.title" rel="noreferrer">
-            <img :src="link.icon.filename" :alt="link.title" />
+            <img :src="link.icon.filename" :alt="link.title" width="32" height="32" />
           </a>
         </li>
       </ul>

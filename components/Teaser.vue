@@ -1,6 +1,6 @@
 <template>
   <div v-editable="blok" class="teaser" v-bind:class="classes">
-    <img :src="blok.image.filename" class="teaser__image" />
+    <img :src="blok.image.filename" class="teaser__image" width="600" height="360"/>
     <div class="teaser__headline-container">
       <h3 class="teaser__headline">
         <span>{{ blok.headline }}</span>
